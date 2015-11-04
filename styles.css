@@ -1,0 +1,143 @@
+* {
+	box-sizing: border-box;
+}
+
+body{
+	background-color: #2E2E2E;
+	margin: 0;
+}
+
+.teclas input[type="button"]{
+	width: 15%;
+	height: 15%;
+	font-family: Calibri;
+	font-size: 72px;
+	font-weight: bold;
+	background-color: #000000;
+	color: #FFFFFF;
+	margin: 3%;
+	border: 0;
+}
+
+.operaciones input[type="button"]{
+	width: 32%;
+	font-family: Calibri;
+	font-size: 72px;
+	font-weight: bold;
+	background-color: #000000;
+	color: #FFFFFF;
+	margin: 6%;
+	border: 0;
+}
+
+.header{
+	background-color: #FBF5EF;
+	width: 100%;
+	float: left;
+}
+
+.header > input[type="button"]{
+	width: 7%;
+	height: 7%;
+	font-size: 72px;
+	font-family: Calibri;
+	font-weight: bold;
+	background-color: #FF8000;
+	color: #FFFFFF;
+	margin: 50px;
+	border: 0;
+}
+
+input[id="display"]{
+	background-color: #FBF5EF;
+	width: 75%;
+	height: 100px;
+	text-align: right;
+	font-size: 90px;
+	font-family: Calibri;
+	font-weight: bold;
+	overflow: hidden;
+	border: 0;
+}
+
+/* CSS styles when put the pointer on the buttons and textarea*/
+
+input[type="button"]:hover{
+	cursor: pointer;
+}
+
+input[id="display"]:hover{
+	border: 2px solid black;
+	cursor: pointer;
+}
+
+/* CSS styles when click on the buttons*/
+
+input[type="button"]:active{
+	background-color: #0000FF;
+	border: 1px solid white;
+}
+
+.header > input[type="button"]:active{
+	background-color: #FFFF00;
+	border: 1px solid black;
+}
+
+.teclas{
+	width: 50%;
+	height: auto;
+	padding: 2%;
+	float: left;
+}
+
+.operaciones{
+	width: 25%;
+	height: auto;
+	padding: 2%;
+	float: right;
+}
+
+/* Media query mobile modo Portrait */
+@media screen and (max-width: 768px){
+	.header > input[type="button"]{
+		width: 11vw;
+		height: 11vh;
+		font-size: 50px;
+	}
+
+	input[id="display"]{
+		width: 70%;
+		height: 10vh;
+		font-size: 50px;
+	}
+
+	.teclas input[type="button"]{
+		width: 12vw;
+		height: 13vh;
+		margin: 2%;
+		font-size: 50px;
+	}
+	
+	.operaciones input[type="button"]{
+		width: 12vw;
+		height: 13vh;
+		margin: 4%;
+		font-size: 50px;
+	}
+	
+	.header{
+		background-color: #FBF5EF;
+		width: 100vw;
+		height: 30vh;
+	}
+
+	.teclas{
+		width: 65%;
+		height: 33.33vh;
+	}
+
+	.operaciones{
+		width: 35%;
+		height: 33.33vh;
+	}
+}
