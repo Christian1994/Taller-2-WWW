@@ -94,15 +94,28 @@ input[type="button"]:active{
 	width: 25%;
 	height: auto;
 	padding: 2%;
+	float: left;
+}
+
+.formulario{
+	width: 25%;
+	height: auto;
+	padding: 2%;
 	float: right;
+	color: #FFFFFF;
+	font-size: 20px;
+}
+
+.formulario > input[type="text"]{
+	margin: 20px;
 }
 
 /* Media query mobile modo Portrait */
 @media screen and (max-width: 768px){
 	.header > input[type="button"]{
-		width: 11vw;
-		height: 11vh;
-		font-size: 50px;
+		width: 9vw;
+		height: 10vh;
+		font-size: 40px;
 	}
 
 	input[id="display"]{
@@ -112,17 +125,17 @@ input[type="button"]:active{
 	}
 
 	.teclas input[type="button"]{
-		width: 12vw;
-		height: 13vh;
+		width: 8vw;
+		height: 9vh;
 		margin: 2%;
-		font-size: 50px;
+		font-size: 40px;
 	}
 	
 	.operaciones input[type="button"]{
-		width: 12vw;
-		height: 13vh;
+		width: 8vw;
+		height: 9vh;
 		margin: 4%;
-		font-size: 50px;
+		font-size: 40px;
 	}
 	
 	.header{
@@ -132,12 +145,22 @@ input[type="button"]:active{
 	}
 
 	.teclas{
-		width: 65%;
+		width: 50%;
 		height: 33.33vh;
 	}
 
 	.operaciones{
-		width: 35%;
+		width: 25%;
 		height: 33.33vh;
+	}
+	
+	.formulario{
+		width: 25%;
+		height: 33.33vh;
+		font-size: 18px;
+	}
+	
+	.formulario > input[type="text"]{
+		width: 80%;
 	}
 }
