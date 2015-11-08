@@ -62,7 +62,7 @@ function operar(sign){
 	operacion.value = op;				//	save the "op" variable in the form	
 	xi = 1;								//	initialize screen
 	
-	//	It will evaluate which of those buttons will change of background color accordin to the operation what I want to do
+	//	It will evaluate which of those buttons will change of background color according to the operation what I want to do
 	switch(sign){
 		//	If the '+' button is pressed, it will turn the background color to blue. The rest as equal as before
 		case '+':
