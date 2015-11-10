@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 	<head>	
-		<title>Taller 1. Calculadora</title>
+		<title>Punto 2 Taller 2. Calculadora</title>
 		<link rel="shortcut icon" href="./img/Univalle.ico">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="styles.css">
@@ -34,6 +34,15 @@
 					<input type="button" id="resta" onclick="operar('-')" value="-">
 					<input type="button" id="suma" onclick="operar('+')" value="+">
 				</div>
+			</div>
+		</form>
+		<form action="datos_calc.php" method="post">
+			<div class="formulario">
+				Valor a: <input id="valor_a" type="text" name="valor_a" readonly="readonly"><br>
+				Valor b: <input id="valor_b" type="text" name="valor_b" readonly="readonly"><br>
+				Operaci&oacuten: <input id="operacion" type="text" name="operacion" readonly="readonly"><br>
+				Resultado: <input id="resultado" type="text" name="resultado" readonly="readonly"><br>
+				<input id="submit" type="submit" value="Enviar datos a BD" readonly="readonly" disabled="true">
 			</div>
 		</form>
 	</body>
