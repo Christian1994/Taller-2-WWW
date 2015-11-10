@@ -1,11 +1,23 @@
 // Evento de carga de página (funcion anonima) 
 // windows.onload permite la carga de propiedades de la pagina despues de renderizacion
-window.onload = function(){
+window.onload = function(){	
 	display = document.getElementById('display');		//	It will edit the <input id="display"> properties
 	suma = document.getElementById('suma');				//	It wlll edit the <input type="button" id="suma"> properties
 	resta = document.getElementById('resta');			//	It wlll edit the <input type="button" id="resta"> properties
 	producto = document.getElementById('producto');		//	It wlll edit the <input type="button" id="producto"> properties
 	cociente = document.getElementById('cociente');		//	It wlll edit the <input type="button" id="cociente"> properties
+	
+	//	These variables will allow save the values in the form
+	valor_a = document.getElementById('valor_a');
+	valor_b = document.getElementById('valor_b');
+	operacion = document.getElementById('operacion');
+	result = document.getElementById('resultado');
+	
+	submit = document.getElementById('submit');			//	It will be used to enable and disable the submit button
+	
+	submit.onclick = function(){
+		alert("Ingreso exitoso de datos a la BD");
+	};
 }
 
 x = "0";	//	Variable that saves the number in the textarea
@@ -45,10 +57,13 @@ function numero(num){
 function operar(sign){
 	resultado();						//	the current operations will be made in first time
 	ni = x;								//	save the first wrote number
+	valor_a.value = ni;					//	save the "valor_a" variable in the form	
 	op = sign;							//	save the operator
+	operacion.value = op;				//	save the "op" variable in the form	
 	xi = 1;								//	initialize screen
+	coma = 0;							//	change coma state allowing the possibility to write the second number as decimal
 	
-	//	It will evaluate which of those buttons will change of background color depending the operation what I want to do
+	//	It will evaluate which of those buttons will change of background color according to the operation what I want to do
 	switch(sign){
 		//	If the '+' button is pressed, it will turn the background color to blue. The rest as equal as before
 		case '+':
@@ -82,6 +97,8 @@ function operar(sign){
 			cociente.style.backgroundColor = '#0000FF';
 		break;
 	}
+	
+	submit.disabled = true;				//	if the "=" button was not pressed yet, "submit" button will continue disabled
 }
 
 // Function that will solve the operation and will show its result in the screen
@@ -90,13 +107,16 @@ function resultado(){
 		display.value = x;				//	we will show the same number
 	}
 	else{								//	in other case, if we have an operation to do
+		valor_b.value = x;				//	save the "valor_b" variable in the form
 		sol = ni + op + x;				//	we will write the operation in a string
 		solucion = eval(sol);			//	we use the eval(p) function. This js predefined function allows to convert the p string passed as parameter 
 										//	in an authentic operation between two numbers. It solves that operation and will save the solution in a variable
 		display.value = solucion;		//	we will show the solution of that operation in the screen
 		x = solucion;					//	we will save the solution in case of sequential operations
+		result.value = x;				//	save the "result" variable in the form
 		op = "no";						//	there isn't any other operation to do
 		xi = 1;							//	the screen can be restarted
+		submit.disabled = false;		//	the submit button will be enabled
 	}
 
 	//	All operation buttons will turn to initial background color	
@@ -135,4 +155,11 @@ function limpiar(){
 	resta.style.backgroundColor = '#000000';
 	producto.style.backgroundColor = '#000000';
 	cociente.style.backgroundColor = '#000000';
+	
+	//	All value fields will become empty and the submit button will be disabled
+	valor_a.value = "";
+	valor_b.value = "";
+	operacion.value = "";
+	result.value = "";
+	submit.disabled = true;
 }
